@@ -1,0 +1,247 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 130023424 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3600), pid=13220, tid=2824
+#
+# JRE version:  (21.0.1+12) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (21.0.1+12-LTS-29, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages webDriver.Chrome
+
+Host: 11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz, 8 cores, 7G,  Windows 11 , 64 bit Build 22621 (10.0.22621.2506)
+Time: Mon Feb  5 12:42:35 2024 India Standard Time elapsed time: 0.015230 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000195700019b0):  JavaThread "Unknown thread" [_thread_in_vm, id=2824, stack(0x0000003228000000,0x0000003228100000) (1024K)]
+
+Stack: [0x0000003228000000,0x0000003228100000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6c9029]
+V  [jvm.dll+0x854b81]
+V  [jvm.dll+0x856e5e]
+V  [jvm.dll+0x857543]
+V  [jvm.dll+0x280c06]
+V  [jvm.dll+0x6c5715]
+V  [jvm.dll+0x6ba10a]
+V  [jvm.dll+0x3557ea]
+V  [jvm.dll+0x35d436]
+V  [jvm.dll+0x3ae1be]
+V  [jvm.dll+0x3ae468]
+V  [jvm.dll+0x3291fc]
+V  [jvm.dll+0x329d8b]
+V  [jvm.dll+0x81d179]
+V  [jvm.dll+0x3bb4f1]
+V  [jvm.dll+0x805ae8]
+V  [jvm.dll+0x44effe]
+V  [jvm.dll+0x450901]
+C  [jli.dll+0x52a3]
+C  [ucrtbase.dll+0x29363]
+C  [KERNEL32.DLL+0x1257d]
+C  [ntdll.dll+0x5aa58]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007fffed999b88, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x000001956ffdec40 WorkerThread "GC Thread#0"                     [id=10840, stack(0x0000003228100000,0x0000003228200000) (1024K)]
+  0x00000195721c22f0 ConcurrentGCThread "G1 Main Marker"            [id=20640, stack(0x0000003228200000,0x0000003228300000) (1024K)]
+  0x000001956ffdefe0 WorkerThread "G1 Conc#0"                       [id=28064, stack(0x0000003228300000,0x0000003228400000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fffed10c2c7]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007fffeda0a6f8] Heap_lock - owner thread: 0x00000195700019b0
+
+Heap address: 0x0000000084c00000, size: 1972 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 5 size 8 Array Of Cards #cards 12 size 40 Howl #buckets 4 coarsen threshold 1843 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 2048
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000084c00000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fffed4f1be9]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.009 Loaded shared library C:\Program Files\Java\jdk-21\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff6fda40000 - 0x00007ff6fda50000 	C:\Program Files\Java\jdk-21\bin\javaw.exe
+0x00007ff86c570000 - 0x00007ff86c787000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff86bb70000 - 0x00007ff86bc34000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ff869af0000 - 0x00007ff869e96000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ff8699d0000 - 0x00007ff869ae1000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ff859d80000 - 0x00007ff859d99000 	C:\Program Files\Java\jdk-21\bin\jli.dll
+0x00007ff858c10000 - 0x00007ff858c2b000 	C:\Program Files\Java\jdk-21\bin\VCRUNTIME140.dll
+0x00007ff86b4d0000 - 0x00007ff86b583000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ff86ba10000 - 0x00007ff86bab7000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ff86bc40000 - 0x00007ff86bce8000 	C:\WINDOWS\System32\sechost.dll
+0x00007ff86a290000 - 0x00007ff86a2b8000 	C:\WINDOWS\System32\bcrypt.dll
+0x00007ff86b590000 - 0x00007ff86b6a7000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ff86bf00000 - 0x00007ff86c0ae000 	C:\WINDOWS\System32\USER32.dll
+0x00007ff86a0f0000 - 0x00007ff86a116000 	C:\WINDOWS\System32\win32u.dll
+0x00007ff853c10000 - 0x00007ff853ea3000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.2506_none_270c5ae97388e100\COMCTL32.dll
+0x00007ff86bd30000 - 0x00007ff86bd59000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ff869ea0000 - 0x00007ff869fb8000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ff8698b0000 - 0x00007ff86994a000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ff85df00000 - 0x00007ff85df0a000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ff86bcf0000 - 0x00007ff86bd21000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ff866210000 - 0x00007ff86621c000 	C:\Program Files\Java\jdk-21\bin\vcruntime140_1.dll
+0x00007ff828220000 - 0x00007ff8282ae000 	C:\Program Files\Java\jdk-21\bin\msvcp140.dll
+0x00007fffecdd0000 - 0x00007fffedae5000 	C:\Program Files\Java\jdk-21\bin\server\jvm.dll
+0x00007ff86a4f0000 - 0x00007ff86a561000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ff868ad0000 - 0x00007ff868b1d000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ff85e490000 - 0x00007ff85e4c4000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ff868ab0000 - 0x00007ff868ac3000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ff868950000 - 0x00007ff868968000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ff85e6a0000 - 0x00007ff85e6aa000 	C:\Program Files\Java\jdk-21\bin\jimage.dll
+0x00007ff866d70000 - 0x00007ff866fa3000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ff86a610000 - 0x00007ff86a999000 	C:\WINDOWS\System32\combase.dll
+0x00007ff86b6c0000 - 0x00007ff86b797000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ff84ba30000 - 0x00007ff84ba62000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ff869950000 - 0x00007ff8699ca000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ff858bf0000 - 0x00007ff858c0f000 	C:\Program Files\Java\jdk-21\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-21\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.22621.2506_none_270c5ae97388e100;C:\Program Files\Java\jdk-21\bin\server
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8 -Dstderr.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages 
+java_command: webDriver.Chrome
+java_class_path (initial): C:\Users\ASUS\eclipse-workspace\MyJava\bin;C:\Program Files\Java\selenium-java-4.17.0\auto-service-annotations-1.1.1.jar;C:\Program Files\Java\selenium-java-4.17.0\byte-buddy-1.14.11.jar;C:\Program Files\Java\selenium-java-4.17.0\checker-qual-3.41.0.jar;C:\Program Files\Java\selenium-java-4.17.0\commons-exec-1.3.jar;C:\Program Files\Java\selenium-java-4.17.0\error_prone_annotations-2.23.0.jar;C:\Program Files\Java\selenium-java-4.17.0\failsafe-3.3.2.jar;C:\Program Files\Java\selenium-java-4.17.0\failureaccess-1.0.2.jar;C:\Program Files\Java\selenium-java-4.17.0\guava-33.0.0-jre.jar;C:\Program Files\Java\selenium-java-4.17.0\j2objc-annotations-2.8.jar;C:\Program Files\Java\selenium-java-4.17.0\jsr305-3.0.2.jar;C:\Program Files\Java\selenium-java-4.17.0\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Program Files\Java\selenium-java-4.17.0\opentelemetry-api-1.34.1.jar;C:\Program Files\Java\selenium-java-4.17.0\opentelemetry-api-events-1.34.1-alpha.jar;C:\Program Files\Java\selenium-java-4.17.0\opentelemetry-context-1.34.1.jar;C:\Program Files\Java\selenium-java-4.17.0\opentelemetry-exporter-logging-1.34.1.jar;C:\Program Files\Java\selenium-java-4.17.0\opentelemetry-extension-incubator-1.34.1-alpha.jar;C:\Program Files\Java\selenium-java-4.17.0\opentelemetry-sdk-1.34.1.jar;C:\Program Files\Java\selenium-java-4.17.0\opentelemetry-sdk-common-1.34.1.jar;C:\Program Files\Java\selenium-java-4.17.0\opentelemetry-sdk-extension-autoconfigure-1.34.1.jar;C:\Program Files\Java\selenium-java-4.17.0\opentelemetry-sdk-extension-autoconfigure-spi-1.34.1.jar;C:\Program Files\Java\selenium-java-4.17.0\opentelemetry-sdk-logs-1.34.1.jar;C:\Program Files\Java\selenium-java-4.17.0\opentelemetry-sdk-metrics-1.34.1.jar;C:\Program Files\Java\selenium-java-4.17.0\opentelemetry-sdk-trace-1.34.1.jar;C:\Program Files\Java\selenium-java-4.17.0\opentelemetry-semconv-1.23.1-alpha.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-api-4.17.0.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-api-4.17.0-sources.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-chrome-driver-4.17.0.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-chrome-driver-4.17.0-sources.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-chromium-driver-4.17.0.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-chromium-driver-4.17.0-sources.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-devtools-v85-4.17.0.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-devtools-v85-4.17.0-sources.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-devtools-v119-4.17.0.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-devtools-v119-4.17.0-sources.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-devtools-v120-4.17.0.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-devtools-v120-4.17.0-sources.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-devtools-v121-4.17.0.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-devtools-v121-4.17.0-sources.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-edge-driver-4.17.0.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-edge-driver-4.17.0-sources.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-firefox-driver-4.17.0.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-firefox-driver-4.17.0-sources.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-http-4.17.0.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-http-4.17.0-sources.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-ie-driver-4.17.0.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-ie-driver-4.17.0-sources.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-java-4.17.0.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-java-4.17.0-sources.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-json-4.17.0.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-json-4.17.0-sources.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-manager-4.17.0.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-manager-4.17.0-sources.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-os-4.17.0.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-os-4.17.0-sources.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-remote-driver-4.17.0.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-remote-driver-4.17.0-sources.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-safari-driver-4.17.0.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-safari-driver-4.17.0-sources.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-support-4.17.0.jar;C:\Program Files\Java\selenium-java-4.17.0\selenium-support-4.17.0-sources.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 130023424                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2067791872                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 2067791872                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+PATH=C:/Users/ASUS/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858/jre/bin/server;C:/Users/ASUS/.p2/pool/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.9.v20231028-0858/jre/bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\ASUS\Downloads\apache-maven-3.9.6-bin\bin;C:\Program Files\Java\apache-maven-3.9.6\bin;C:\Users\ASUS\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.1\bin;;C:\Program Files\Java\apache-maven-3.9.6\bin;;C:\;
+USERNAME=ASUS
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
+TMP=C:\Users\ASUS\AppData\Local\Temp
+TEMP=C:\Users\ASUS\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 22621 (10.0.22621.2506)
+OS uptime: 21 days 19:06 hours
+
+CPU: total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 140 stepping 1 microcode 0xa6, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, avx512f, avx512dq, avx512cd, avx512bw, avx512vl, sha, fma, vzeroupper, avx512_vpopcntdq, avx512_vpclmulqdq, avx512_vaes, avx512_vnni, clflush, clflushopt, clwb, avx512_vbmi2, avx512_vbmi, rdtscp, rdpid, fsrm, gfni, avx512_bitalg, f16c, pku, cet_ibt, cet_ss, avx512_ifma
+Processor Information for processor 0
+  Max Mhz: 2419, Current Mhz: 1209, Mhz Limit: 2419
+Processor Information for processor 1
+  Max Mhz: 2419, Current Mhz: 1209, Mhz Limit: 2419
+Processor Information for processor 2
+  Max Mhz: 2419, Current Mhz: 2419, Mhz Limit: 2419
+Processor Information for processor 3
+  Max Mhz: 2419, Current Mhz: 1209, Mhz Limit: 2419
+Processor Information for processor 4
+  Max Mhz: 2419, Current Mhz: 2419, Mhz Limit: 2419
+Processor Information for processor 5
+  Max Mhz: 2419, Current Mhz: 2419, Mhz Limit: 2419
+Processor Information for processor 6
+  Max Mhz: 2419, Current Mhz: 2419, Mhz Limit: 2419
+Processor Information for processor 7
+  Max Mhz: 2419, Current Mhz: 1209, Mhz Limit: 2419
+
+Memory: 4k page, system-wide physical 7886M (797M free)
+TotalPageFile size 9934M (AvailPageFile size 106M)
+current process WorkingSet (physical memory assigned to process): 11M, peak: 11M
+current process commit charge ("private bytes"): 60M, peak: 184M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (21.0.1+12-LTS-29) for windows-amd64 JRE (21.0.1+12-LTS-29), built on 2023-10-05T13:27:09Z by "mach5one" with MS VC++ 17.1 (VS2022)
+
+END.
